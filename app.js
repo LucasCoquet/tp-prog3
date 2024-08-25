@@ -1,3 +1,4 @@
+//Ejercicio 1
 const fs = require('fs');
 
 // Variable para la URL de la API
@@ -28,7 +29,7 @@ const personajesDisponibles = async () => {
         const datos = await fetch(API_URL);
         const personajes = await datos.json(); 
 
-        console.log("Información sobre todos los personajes: ", personajes); 
+        console.log("Personajes disponibles: ", personajes); 
 
         // Punto 3
         fs.writeFile("personajes.json", JSON.stringify(personajes, null, 2), (error) => {
@@ -76,7 +77,7 @@ const agregarPersonaje = (nuevoPersonaje) => {
         try {
             const personajes = JSON.parse(data);
 
-            // Agregar nuevo personaje
+            // push para aggregar nuevo personaje
             personajes.push(nuevoPersonaje);
 
             const jsonString = JSON.stringify(personajes, null, 2);
@@ -130,13 +131,13 @@ const imprimirPersonajes = () => {
 };
 
 recuperarPersonaje("Ned Stark");
-//personajesDisponibles();
-//mostrarFamiliaStark();
+personajesDisponibles();
+mostrarFamiliaStark();
 
 const nuevoPersonaje = {
     fullName: "Lucas Coquet",
     title: "King in the North",
     family: "House Stark"
 };
-//agregarPersonaje(nuevoPersonaje);
-//eliminarPersonajes();
+agregarPersonaje(nuevoPersonaje);
+eliminarPersonajes();
