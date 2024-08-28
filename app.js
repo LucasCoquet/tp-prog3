@@ -133,7 +133,6 @@ const imprimirPersonajes = () => {
 recuperarPersonaje("Ned Stark");
 personajesDisponibles();
 mostrarFamiliaStark();
-
 const nuevoPersonaje = {
     fullName: "Lucas Coquet",
     title: "King in the North",
